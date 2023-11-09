@@ -1,0 +1,43 @@
+name: update gadio rss
+
+on:
+  push:
+  schedule:
+    - cron: '0 7,11,14,17,22 * * *'
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Python3
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install requirements
+        run: |
+          python3 -m pip install --upgrade pip
+          pip3 install -r ./requirements.txt
+
+      - name: Run Gadio_rss_generator.py
+        run: python3 ./Gadio_rss_generator.py
+
+      - name: Commit & Push
+        env:
+          #GIT_NAME: ${{ secrets.GIT_NAME }}
+          #GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
+          GIT_NAME: GitHub Actions[Bot]
+          GIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git config --local user.name $GIT_NAME
+          git config --local user.email $GIT_EMAIL
+          git add .
+          git commit -m "Github action update at `date '+%Y-%m-%d %H:%M:%S'`."
+          git push -u origin main
+
