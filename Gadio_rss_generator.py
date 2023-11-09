@@ -9,6 +9,7 @@ GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
 NOW_GMT = lambda: datetime.datetime.utcnow().strftime(GMT_FORMAT)
 
 RSS_TEMPLATE_HEADER = '''
+<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" version="2.0">
     <channel>
         <title><![CDATA[ Gadio ]]></title>
@@ -17,8 +18,8 @@ RSS_TEMPLATE_HEADER = '''
         <description>
             <![CDATA[ 机核网出品的Gadio是中国首档游戏专门播客，将一切与游戏有关的事情分享给热爱游戏的你！ 欢迎访问官方网站 www.gcores.com/radios ]]>
         </description>
-        <generator>http://github.com/haolloyin/Gadio_rss_generater</generator>
-        <webMaster>http://github.com/haolloyin/Gadio_rss_generater</webMaster>
+        <generator>http://github.com/haolloyin/gadio-rss</generator>
+        <webMaster>http://github.com/haolloyin/gadio-rss</webMaster>
         <itunes:author>机核网电台 www.gcores.com/radios</itunes:author>
         <itunes:explicit>clean</itunes:explicit>
         <language>zh-cn</language>
@@ -184,9 +185,9 @@ def main():
         timelines.sort(key=lambda item: item[0])
         radio_timelines = '<h4>---- 时间轴 ----</h4>\n<ul>\n'
         for item in timelines:
-            radio_timelines += f'<li>{item[1]} {item[2]}</li></br>\n'
-            radio_timelines += f'{item[4]}</br>\n'
-            radio_timelines += f'<a href="{item[5]}">link</a></br></br>\n' if len(item[5])>0 else ''
+            radio_timelines += f'<li><a href="">{item[1]} {item[2]}</a></li></br>\n'
+            radio_timelines += f'{item[4]}'
+            radio_timelines += f'<a href="{item[5]}"> Link</a></br></br>\n' if len(item[5])>0 else '</br>\n'
         radio_timelines += '</ul>'
 
         radio_content  = f'<p>主播：{anchors_str}</p>\n'
