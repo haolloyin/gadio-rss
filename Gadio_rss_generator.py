@@ -9,7 +9,7 @@ GMT_FORMAT = '%a, %d %b %Y %H:%M:%S +0800'
 NOW_GMT = lambda: datetime.datetime.utcnow().strftime(GMT_FORMAT)
 
 RSS_TEMPLATE_HEADER = f'''
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" version="2.0">
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" version="2.0" encoding="UTF-8">
     <channel>
         <title><![CDATA[ Gadio ]]></title>
         <link>机核网电台 https://www.gcores.com/radios</link>
@@ -55,7 +55,7 @@ ITEM_TEMPLATE = '''
 
 HISTORY_RADIO_FILE      = 'Gadio_history.xml'
 NEW_RADIO_FILE          = 'Gadio_new.xml'
-GADIO_RSS_FILE          = 'Gadio.xml'
+GADIO_RSS_FILE          = 'Gadio.rss'
 GADIO_CONF_FILE         = 'Gadio_conf.json'
 NEWEST_RADIO_ID         = 0 # 当前最新的 id
 SAVED_RADIO_ID          = 0 # 已保存的最新 id
