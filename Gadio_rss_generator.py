@@ -13,22 +13,18 @@ RSS_TEMPLATE_HEADER = '''
     <channel>
         <title><![CDATA[ Gadio ]]></title>
         <link>机核网电台 https://www.gcores.com/radios</link>
-        <atom:link href="https://rsshub.app/xiaoyuzhou/podcast/5e280fb0418a84a0461fc251" rel="self" type="application/rss+xml"/>
         <description>
             <![CDATA[ 机核网出品的Gadio是中国首档游戏专门播客，将一切与游戏有关的事情分享给热爱游戏的你！ 欢迎访问官方网站 www.gcores.com/radios ]]>
         </description>
         <generator>http://github.com/haolloyin/gadio-rss</generator>
-        <webMaster>http://github.com/haolloyin/gadio-rss</webMaster>
         <itunes:author>机核网电台 www.gcores.com/radios</itunes:author>
-        <itunes:explicit>clean</itunes:explicit>
-        <language>zh-cn</language>
+        <itunes:explicit>false</itunes:explicit>
         <image>
             <url> https://static.gcores.com/assets/6909fc2fc5fa1394cedce575dd49de33.png </url>
             <title> <![CDATA[ Gadio ]]> </title>
             <link> https://www.gcores.com/radios </link>
         </image>
         <lastBuildDate> {lastBuildDate} </lastBuildDate>
-        <ttl>120</ttl>
 '''
 
 RSS_TEMPLATE_FOOTER = '''
@@ -53,6 +49,7 @@ ITEM_TEMPLATE = '''
 {radio_content}
     ]]>
     </content:encoded>
+    <itunes:episodeType>full</itunes:episodeType>
 </item>
 '''
 
