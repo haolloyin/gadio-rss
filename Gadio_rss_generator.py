@@ -216,9 +216,9 @@ def main():
 
     # 更新完整的 rss 文件
     with open(GADIO_RSS_FILE,'w') as f:
-        f.write(RSS_TEMPLATE_HEADER)
+        f.write(RSS_TEMPLATE_HEADER.lstrip())
         f.write(new_content)
-        f.write(RSS_TEMPLATE_FOOTER)
+        f.write(RSS_TEMPLATE_FOOTER.rstrip())
 
 
 def init_files():
