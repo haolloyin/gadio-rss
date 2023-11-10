@@ -8,7 +8,7 @@ import requests
 GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
 NOW_GMT = lambda: datetime.datetime.utcnow().strftime(GMT_FORMAT)
 
-RSS_TEMPLATE_HEADER = '''
+RSS_TEMPLATE_HEADER = f'''
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" version="2.0">
     <channel>
         <title><![CDATA[ Gadio ]]></title>
@@ -24,7 +24,7 @@ RSS_TEMPLATE_HEADER = '''
             <title> <![CDATA[ Gadio ]]> </title>
             <link> https://www.gcores.com/radios </link>
         </image>
-        <lastBuildDate> {lastBuildDate} </lastBuildDate>
+        <lastBuildDate> {NOW_GMT()} </lastBuildDate>
 '''
 
 RSS_TEMPLATE_FOOTER = '''
