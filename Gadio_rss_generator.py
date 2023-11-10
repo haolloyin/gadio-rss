@@ -9,8 +9,7 @@ GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
 NOW_GMT = lambda: datetime.datetime.utcnow().strftime(GMT_FORMAT)
 
 RSS_TEMPLATE_HEADER = '''
-<?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" version="2.0">
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" version="2.0">
     <channel>
         <title><![CDATA[ Gadio ]]></title>
         <link>机核网电台 https://www.gcores.com/radios</link>
