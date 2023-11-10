@@ -88,7 +88,7 @@ def get_included_name(included_arr, id_type):
 def main():
     # 每次获取 100 期
     offset = 0
-    limit = 5
+    limit = 20
     url = f'https://www.gcores.com/gapi/v1/radios?page[limit]={limit}&page[offset]={offset}&sort=-published-at&include=category,user,djs&filter[list-all]=0&fields[radios]=title,desc,excerpt,is-published,thumb,app-cover,cover,comments-count,likes-count,bookmarks-count,is-verified,published-at,option-is-official,option-is-focus-showcase,duration,draft,audit-draft,user,comments,category,tags,entries,entities,similarities,latest-collection,collections,operational-events,portfolios,catalog-tags,media,djs,latest-album,albums,is-free'
 
     resp_dic = {}
