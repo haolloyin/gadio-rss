@@ -5,7 +5,7 @@ import random
 import datetime
 import requests
 
-GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
+GMT_FORMAT = '%a, %d %b %Y %H:%M:%S +0800'
 NOW_GMT = lambda: datetime.datetime.utcnow().strftime(GMT_FORMAT)
 
 RSS_TEMPLATE_HEADER = f'''
@@ -24,7 +24,7 @@ RSS_TEMPLATE_HEADER = f'''
             <title> <![CDATA[ Gadio ]]> </title>
             <link> https://www.gcores.com/radios </link>
         </image>
-        <lastBuildDate> {NOW_GMT()} </lastBuildDate>
+        <lastBuildDate>{NOW_GMT()}</lastBuildDate>
 '''
 
 RSS_TEMPLATE_FOOTER = '''
