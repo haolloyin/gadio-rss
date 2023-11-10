@@ -182,9 +182,9 @@ def main():
         timelines.sort(key=lambda item: item[0])
         radio_timelines = '<h4>---- 时间轴 ----</h4>\n<ul>\n'
         for item in timelines:
-            radio_timelines += f'<li><a href="">{item[1]} {item[2]}</a></li></br>\n'
+            radio_timelines += f'<li><a href="">{item[1]}</a> {item[2]}</li></br>\n'
             radio_timelines += f'{item[4]}'
-            radio_timelines += f'<a href="{item[5]}"> Link</a></br></br>\n' if len(item[5])>0 else '</br>\n'
+            radio_timelines += f'<a href="{item[5]}"> ~~Link~~ </a></br></br>\n' if len(item[5])>0 else '</br>\n'
         radio_timelines += '</ul>'
 
         radio_content  = f'<p>主播：{anchors_str}</p>\n'
