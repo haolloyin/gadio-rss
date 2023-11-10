@@ -1,4 +1,21 @@
 
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" version="2.0" encoding="UTF-8">
+    <channel>
+        <title><![CDATA[ Gadio ]]></title>
+        <link>机核网电台 https://www.gcores.com/radios</link>
+        <description>
+            <![CDATA[ 机核网出品的Gadio是中国首档游戏专门播客，将一切与游戏有关的事情分享给热爱游戏的你！ 欢迎访问官方网站 www.gcores.com/radios ]]>
+        </description>
+        <generator>http://github.com/haolloyin/gadio-rss</generator>
+        <itunes:author>机核网电台 www.gcores.com/radios</itunes:author>
+        <itunes:explicit>false</itunes:explicit>
+        <image>
+            <url> https://static.gcores.com/assets/6909fc2fc5fa1394cedce575dd49de33.png </url>
+            <title> <![CDATA[ Gadio ]]> </title>
+            <link> https://www.gcores.com/radios </link>
+        </image>
+        <lastBuildDate>Fri, 10 Nov 2023 07:46:07 +0800</lastBuildDate>
+
 <item>
     <title>[Gadio Early Access]为了给你推荐这些BOOOM游戏，我们专门办了个颁奖礼</title>
     <link>https://www.gcores.com/radios/173331</link>
@@ -638,3 +655,6 @@ DC电影《海王2失落的王国》确认引进内地院线，档期待定。�
 </item>
 
 
+
+    </channel>
+</rss>
