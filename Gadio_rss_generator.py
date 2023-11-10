@@ -88,7 +88,7 @@ def get_included_name(included_arr, id_type):
 def main():
     # 每次获取 100 期
     offset = 0
-    limit = 20
+    limit = 21
     url = f'https://www.gcores.com/gapi/v1/radios?page[limit]={limit}&page[offset]={offset}&sort=-published-at&include=category,user,djs&filter[list-all]=0&fields[radios]=title,desc,excerpt,is-published,thumb,app-cover,cover,comments-count,likes-count,bookmarks-count,is-verified,published-at,option-is-official,option-is-focus-showcase,duration,draft,audit-draft,user,comments,category,tags,entries,entities,similarities,latest-collection,collections,operational-events,portfolios,catalog-tags,media,djs,latest-album,albums,is-free'
 
     resp_dic = {}
@@ -214,6 +214,7 @@ def main():
     new_content = ''
     with open(NEW_RADIO_FILE,'r') as f:
         new_content = f.read()
+    os.remove(NEW_RADIO_FILE)
 
     # 更新完整的 rss 文件
     with open(GADIO_RSS_FILE,'w') as f:
@@ -223,17 +224,9 @@ def main():
 
 
 def init_files():
-    if not os.path.exists(NEW_RADIO_FILE):
-        with open(NEW_RADIO_FILE,'w') as f:
-            f.write('')
-
     if not os.path.exists(GADIO_RSS_FILE):
         with open(GADIO_RSS_FILE,'w') as f:
             f.write('')
-
-    # 清空
-    with open(NEW_RADIO_FILE,'w') as f:
-        f.write('')
 
 
 if __name__ == '__main__':
