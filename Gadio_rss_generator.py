@@ -210,32 +210,18 @@ def main():
             f.write(radio_item)
             f.write('\n\n')
 
-    history_content = ''
-    with open(HISTORY_RADIO_FILE,'r') as f:
-        history_content = f.read()
-
     new_content = ''
     with open(NEW_RADIO_FILE,'r') as f:
         new_content = f.read()
-
-    # 更新历史文件，相当于追加新内容
-    with open(HISTORY_RADIO_FILE,'w') as f:
-        f.write(new_content)
-        f.write(history_content)
 
     # 更新完整的 rss 文件
     with open(GADIO_RSS_FILE,'w') as f:
         f.write(RSS_TEMPLATE_HEADER)
         f.write(new_content)
-        f.write(history_content)
         f.write(RSS_TEMPLATE_FOOTER)
 
 
 def init_files():
-    if not os.path.exists(HISTORY_RADIO_FILE):
-        with open(HISTORY_RADIO_FILE,'w') as f:
-            f.write('')
-
     if not os.path.exists(NEW_RADIO_FILE):
         with open(NEW_RADIO_FILE,'w') as f:
             f.write('')
@@ -244,16 +230,9 @@ def init_files():
         with open(GADIO_RSS_FILE,'w') as f:
             f.write('')
 
-    backup_history = ''
-    with open(NEW_RADIO_FILE,'r') as f:
-        backup_history = f.read()
-
-    with open('backup_'+NEW_RADIO_FILE,'w') as f:
-        f.write(backup_history)
-
+    # 清空
     with open(NEW_RADIO_FILE,'w') as f:
         f.write('')
-
 
 
 if __name__ == '__main__':
