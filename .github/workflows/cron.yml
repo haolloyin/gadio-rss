@@ -6,7 +6,7 @@ on:
     - cron: '0 23,3,6,9,14 * * *'
 
 jobs:
-  job1:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
