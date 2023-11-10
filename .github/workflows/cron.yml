@@ -1,7 +1,7 @@
 name: update gadio rss
 
 on:
-  push:
+  # push:
   schedule:
     - cron: '0 23,3,6,9,14 * * *'
 
